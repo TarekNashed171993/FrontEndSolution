@@ -1,0 +1,51 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+    <div class="form-froup row" style="width: 90%;">
+    
+        <label class="col-sm-2 col-form-label">FirstName</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" [(ngModel)]="FirstName"
+            placeholder="Enter Customer FirstName">
+        </div>
+        <label class="col-sm-2 col-form-label">MiddleName</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" [(ngModel)]="MiddleName"
+            placeholder="Enter Customer MiddleName">
+        </div>
+        <label class="col-sm-2 col-form-label">LastName</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" [(ngModel)]="LastName"
+            placeholder="Enter Customer LastName">
+        </div>
+        <label class="col-sm-2 col-form-label">FamilyName</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" [(ngModel)]="FamilyName"
+            placeholder="Enter Customer FamilyName">
+        </div>
+        <label class="col-sm-2 col-form-label">NationalId</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" [(ngModel)]="NationalId"
+            placeholder="Enter Customer NationalId">
+        </div>
+    
+        <label class="col-sm-2 col-form-label">Address</label>
+        <div class="col-sm-4">
+           <select class="form-control" [(ngModel)]="AddressId">
+               <option>--Select--</option>
+               <option *ngFor="let dataItem of AddressesList" [ngValue]="dataItem.id">
+                   {{dataItem.description}}
+               </option>
+           </select>
+        </div>
+    
+    </div>
+    </div>
+    
+    
+    <button (click)="addCustomer()" *ngIf="Cust.id==0" class="btn btn-primary">
+        Add
+    </button>
+    
+    <button (click)="updateCustomer()" *ngIf="Cust.id!=0" class="btn btn-primary">
+        Update
+    </button>
